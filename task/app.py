@@ -78,8 +78,11 @@ async def start(stream: bool) -> None:
         conv_chat.add_message(resp_message)
         
 
+print("Please check mode ( sync or async) in start() function and set stream param accordingly.")
 
+s=input("Do you want to enable streaming mode? (yes/no) > ").strip().lower()
+stream_mode = True if s == 'yes' else False
 
 asyncio.run(
-    start(True)
+    start(stream_mode)
 )
